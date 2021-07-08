@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+@
+
+# Unity Environments
+Banana.app/
+VisualBanana.app/
