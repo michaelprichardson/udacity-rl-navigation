@@ -131,5 +131,5 @@ dmypy.json
 @
 
 # Unity Environments
-Banana.app/
-VisualBanana.app/
+Banana.app
+VisualBanana.app
