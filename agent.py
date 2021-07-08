@@ -44,8 +44,8 @@ class Agent():
         self.use_double = use_double
 
         # Q-Network
-        self.qnetwork_local = QNetwork(state_size, action_size, seed, layer_1, layer_2, use_dueling).to(device)
-        self.qnetwork_target = QNetwork(state_size, action_size, seed, layer_1, layer_2, use_dueling).to(device)
+        self.qnetwork_local = QNetwork(state_size, action_size, seed, layer_1, layer_2, use_dropout, use_dueling).to(device)
+        self.qnetwork_target = QNetwork(state_size, action_size, seed, layer_1, layer_2, use_dropout, use_dueling).to(device)
         self.optimizer = optim.Adam(self.qnetwork_local.parameters(), lr=LR)
 
         # Replay memory

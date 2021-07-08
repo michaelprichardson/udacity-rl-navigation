@@ -35,7 +35,7 @@ class QNetwork(nn.Module):
 
         # Add dropout layer
         if self.use_dropout:
-            x = F.drop(x, 0.5)
+            x = F.dropout(x, 0.5)
         # Use dueling agent
         elif self.use_dueling:
             return self.fc3(x) + self.state_value(x)

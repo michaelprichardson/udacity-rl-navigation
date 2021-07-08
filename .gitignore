@@ -133,3 +133,9 @@ dmypy.json
 # Unity Environments
 Banana.app
 VisualBanana.app
+
+# Mac file system
+.DS_*
+
+# Checkpoints
+checkpoints
