@@ -67,8 +67,10 @@ python -m ipykernel install --user --name=drlnd
 To run the notebook use the following command in the root of this repository
 
 ```bash
-jupyter notebook
+jupyter notebook Navigation.ipynb
 ```
+
+This will launch the jupyter notebook interface with the `Navigation.ipynb`. Once this has loaded, run all the cells (`Cell > Run all`). It may take some time as it will run through all 10 configurations.
 
 ### Conda Cheatsheet
 
