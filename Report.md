@@ -13,6 +13,8 @@ The project environment is built in Unity and is a version of the Banana Collect
 
 ### Approach
 
+#### Learning Algorithm
+
 The simple Deep Q-Networks, Double Deep Q-Network and Dueling Deep Q-Networks were implemented, which all had a replay buffer.
 
 Q-learning is a form of Temporal Difference (TD) learning, where the agent learns from each step instead of each episode. The state space is continuous and can be represented as a table. Thus a function approximator is used instead. This is where deep learning is used. The function approximator is represented by a neural network. Hence the name Deep Q-Networks (DQN). The Deep Q-Networks algorithm can be highly unstable and the most common methods used to stabilize them are Fixed Q-Targets and an Experience Buffer. An experience buffer was added to our agent, the idea behind it is that we maintain a replay buffer of a certain size and after a few iterations we sample experiences from the buffer and use it to calculate the loss. this random sampling breaks the sequential nature of the experiences and helps to stabilize learning.
@@ -21,7 +23,26 @@ Deep Q-Networks are known to overestimate the value function. The idea behind Do
 
 Duelling Deep Q-Networks (Duel DQN) use two output streams instead of one as is normal in DQN's. The one output stream is used to calculate the value function for the state while the other is used to calculate the advantage function for that action. The two streams are added together in an aggregated layer.
 
+#### Model architecture
+
 The architecture of the model was simple. It consisted of two hidden layers with the option to add a dropout layer. The input layer had the dimension 37x1 for the 37 different state spaces. Next, there were two fully connected layers with the number of nodes kept the same and adjustable. There was the option to add a dropout layer between the two fully connected layers to help prevent any overfitting that may occur, this had a dropout probability of 50%.
+
+#### Hyperparameters
+
+The following hyperparameters were used:
+
+| Hyperparameter | Value |
+| -------------- | ----- |
+| Epsilon start | 1.0 |
+| Epsilon end | 0.1 |
+| Epsilon decay | 0.995 |
+| γ (Discount factor) | 0.99 |
+| τ | 1e-3  |
+| Learning rate | 5e-4  |
+| Replay buffer size | 1e5 |
+| Batch size | 64 |
+| Update interval | 4 |
+| Max number of episodes | 500 |
 
 ### Results
 
